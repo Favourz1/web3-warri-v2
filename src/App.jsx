@@ -41,7 +41,7 @@ function App() {
           <div className="flex items-center gap-3">
             <a
               href="#"
-              className="relative pt-2 font-medium after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
+              className="hidden md:inline-flex relative pt-2 font-medium after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
             >
               Support
             </a>
