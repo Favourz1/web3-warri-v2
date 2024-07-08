@@ -1,11 +1,68 @@
+import { useEffect } from "react";
+// import { useRef } from "react";
+
 import logoSvg from "./assets/img/logo.svg";
 import heroBg from "./assets/img/hero-bg.gif";
+// import DelsuArbEvent1 from "./assets/img/web3-warri-DELSU.webp";
+import theGraphLogo from "./assets/logos/the-graph-logo.png";
+import ethLogo from "./assets/logos/eth-logo.svg";
+import arbitrumLogo from "./assets/logos/arbitrum-logo.svg";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./App.css";
+import "./assets/css/card.scss";
+import { impactData } from "./data";
+import { CustomCard } from "./components/CustomCard";
 
 function App() {
+  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(ScrollTrigger);
+
+  // const impactSectionRef = useRef();
+  useGSAP(() => {
+    // gsap code here...
+    // ScrollTrigger.create({
+    //   trigger: "#impactSection",
+    //   start: "top top",
+    //   end: `+=${
+    //     document
+    //       .querySelector(".impactSection-contentHolder")
+    //       .getBoundingClientRect().height
+    //   }`,
+    //   pin: "#impactSection-imgHolder",
+    //   pinSpacing: false,
+    //   scrub: 1,
+    // });
+  }); // <-- scope is for selector text (optional)
+
+  const randomizeCardTiles = (card) => {
+    const tiles = card.querySelectorAll(".custom-card-container .tile");
+    tiles.forEach((tile) => {
+      const randomDelay = Math.random() * 8; // Random delay between 0 and 8 seconds
+      tile.style.animationDelay = `${randomDelay}s`;
+    });
+  };
+
+  useEffect(() => {
+    const cards = document.querySelectorAll(".custom-card-container .card");
+
+    cards.forEach((card) => {
+      // if(card){
+      //   card.classList.add("hover-animation");
+      // }
+      randomizeCardTiles(card);
+      // setTimeout(() => {
+      //    if (card) {
+      //      card.classList.remove("hover-animation");
+      //    }
+      // }, 2000); // Adjust the delay as needed
+    });
+  }, []);
+
   return (
-    <>
-      <header className="min-w-full fixed top-0 py-2 z-50">
+    <div className="">
+      <header className="min-w-full fixed top-0 py-2 z-50 bg-[#ffffff38] backdrop-blur-[1px]">
         <nav className="container mx-auto flex justify-between items-center px-6">
           <a href="#">
             <img className="w-32" src={logoSvg} alt="Web3 Warri Logo" />
@@ -53,7 +110,7 @@ function App() {
       </header>
       <main>
         <section
-          className="relative pb-5 pt-1 bg-white bg-center bg-cover bg-[url('./assets/img/hero-bg.gif')]"
+          className="relative mb-5 pt-1 bg-center bg-cover bg-[url('./assets/img/hero-bg.gif')]"
           style={{ backgroundImage: heroBg }}
         >
           {/* <video
@@ -67,7 +124,7 @@ function App() {
             <source src="video/hero-vid.mov" type="video/quicktime"/>
                 <source src="video/hero-vid.webm" type="video/webm"/>
           </video> */}
-          <div className="container mx-auto px-3 po min-h-dvh">
+          <div className="container mx-auto px-3 min-h-dvh max-h-dvh">
             <div className="flex flex-col items-center justify-center min-h-[inherit]">
               <div className="flex items-center gap-2 p-2 text-sm bg-[#f4f4f403] border border-[#ddd] rounded-3xl mb-4 cursor-pointer hover:bg-[#f4f4f4]">
                 <span className="flex items-center px-2 py-1 bg-black text-white rounded-3xl">
@@ -141,8 +198,65 @@ function App() {
             </div>
           </div>
         </section>
+        <section className="relative py-8">
+          <div className="container mx-auto px-3">
+            <div className="flex flex-col items-center w-full">
+              <h1 className="text-3xl font-semibold mb-6">Our Partners</h1>
+              <div className="partner-logo-wrapper flex items-center justify-between gap-4 w-[70%]">
+                <figure>
+                  <img
+                    className="partner-logo-1 min-w-24 w-52 h-auto grayscale hover:grayscale-0"
+                    src={theGraphLogo}
+                    alt="The Graph Logo"
+                  />
+                </figure>
+                <figure>
+                  <img
+                    className="partner-logo-2 min-w-24 w-52 h-auto grayscale hover:grayscale-0"
+                    src={ethLogo}
+                    alt="Ethereum Logo"
+                  />
+                </figure>
+                <figure>
+                  <img
+                    className="partner-logo-3 min-w-24 w-52 h-auto grayscale hover:grayscale-0"
+                    src={arbitrumLogo}
+                    alt="Arbitrum Logo"
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative py-8">
+          <div className="container mx-auto px-3">
+            <div className="flex flex-col items-center w-full">
+              <h1 className="text-3xl font-semibold mb-6">
+                How We Are Changing The World
+              </h1>
+              <div className="custom-card-container light">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-12 flex-wrap">
+                  {impactData.map((item, index) => (
+                    <CustomCard
+                      key={index}
+                      title={item.title}
+                      bodyText={item["write_up"]}
+                      icon={item.icon}
+                      animate={true}
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* <div className="h-[50dvh] bg-cyan-300  mb-6"></div>
+          <div className="h-[50dvh] bg-slate-300  mb-6"></div>
+          <div className="h-[50dvh] bg-yellow-300  mb-6"></div> */}
       </main>
-    </>
+    </div>
   );
 }
 

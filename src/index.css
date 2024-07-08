@@ -37,10 +37,43 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  background-color: white;
+  background-color: #fffffd;
+  /* background-color: #FCFCFF; */
   overflow-x: hidden;
   overflow-y:scroll;
 }
+
+
+/* partner logo and animations */
+
+/* @keyframes logoAnimation {
+  0%,
+  33.33% {
+    filter: grayscale(0%);
+  }
+  66.66%,
+  100% {
+    filter: grayscale(100%);
+  }
+}
+
+.partner-logo-1 {
+    transition: filter 0.5s ease-in-out;
+    animation: logoAnimation 9s infinite;
+    animation-delay: 0s;
+}
+
+.partner-logo-2 {
+    transition: filter 0.5s ease-in-out;
+    animation: logoAnimation 9s infinite;
+    animation-delay: 3s;
+}
+
+.partner-logo-3 {
+    transition: filter 0.5s ease-in-out;
+    animation: logoAnimation 9s infinite;
+    animation-delay: 6s;
+} */
 
 
 
@@ -57,3 +90,4 @@ body {
     background-color: #f9f9f9;
   }
 } */
+

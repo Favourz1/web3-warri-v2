@@ -1,0 +1,1 @@
+export { default as impactData } from "./web3_warri_impact.jsx"
