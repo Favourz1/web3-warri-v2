@@ -7,13 +7,15 @@ import heroBg from "./assets/img/hero-bg.gif";
 import theGraphLogo from "./assets/logos/the-graph-logo.png";
 import ethLogo from "./assets/logos/eth-logo.svg";
 import arbitrumLogo from "./assets/logos/arbitrum-logo.svg";
+import charlesDelsuVidMp4 from "./assets/video/charles-delsu-web3-Warri.mp4";
+import pointingHandEmoji from "./assets/img/pointing-hand-emoji.png";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./App.css";
-import "./assets/css/card.scss";
 import { impactData } from "./data";
 import { CustomCard } from "./components/CustomCard";
+import "./App.css";
+import "./assets/css/card.scss";
 
 function App() {
   gsap.registerPlugin(useGSAP);
@@ -124,7 +126,7 @@ function App() {
             <source src="video/hero-vid.mov" type="video/quicktime"/>
                 <source src="video/hero-vid.webm" type="video/webm"/>
           </video> */}
-          <div className="container mx-auto px-3 min-h-dvh max-h-dvh">
+          <div className="container mx-auto px-6 min-h-dvh max-h-dvh">
             <div className="flex flex-col items-center justify-center min-h-[inherit]">
               <div className="flex items-center gap-2 p-2 text-sm bg-[#f4f4f403] border border-[#ddd] rounded-3xl mb-4 cursor-pointer hover:bg-[#f4f4f4]">
                 <span className="flex items-center px-2 py-1 bg-black text-white rounded-3xl">
@@ -199,7 +201,7 @@ function App() {
           </div>
         </section>
         <section className="relative py-8">
-          <div className="container mx-auto px-3">
+          <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
               <h1 className="text-3xl font-semibold mb-6">Our Partners</h1>
               <div className="partner-logo-wrapper flex items-center justify-between gap-4 w-[70%]">
@@ -230,10 +232,10 @@ function App() {
         </section>
 
         <section className="relative py-8">
-          <div className="container mx-auto px-3">
+          <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
               <h1 className="text-3xl font-semibold mb-6">
-                How We Are Changing The World
+                How We Are Impacting The World
               </h1>
               <div className="custom-card-container light">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-12 flex-wrap">
@@ -248,6 +250,35 @@ function App() {
                   ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="relative py-8">
+          <div className="container px-6">
+            <div className="flex flex-col items-center w-full">
+              <div className="flex flex-col items-center mb-8 text-center">
+                <h1 className="flex items-center justify-center gap-3 text-3xl text-center font-semibold">
+                  <span>We Value You</span>
+                  <img src={pointingHandEmoji} alt="" />
+                </h1>
+                <p className="text-base text-slate-900 font-openSans max-w-[60%]">
+                  At Web3 Warri we embrace decentralization, immutability,
+                  permissionless innovation, trustlessness, and
+                  crypto-economics, while celebrating inclusivity and diverse
+                  participation.
+                </p>
+              </div>
+              <video
+                className="w-full h-[500px] rounded-xl object-cover"
+                autoPlay
+                loop
+                muted
+                poster=""
+              >
+                <source src={charlesDelsuVidMp4} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </section>
