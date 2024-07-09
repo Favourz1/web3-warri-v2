@@ -7,6 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        raleway: "'Raleway', sans-serif",
         openSans: "Open Sans, sans-serif"
       }
     },
