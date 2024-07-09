@@ -2,6 +2,7 @@ import { useEffect } from "react";
 // import { useRef } from "react";
 
 import logoSvg from "./assets/img/logo.svg";
+import logoWhiteSvg from "./assets/img/logo-white.svg";
 import heroBg from "./assets/img/hero-bg.gif";
 import DelsuArbEvent1 from "./assets/img/web3-warri-DELSU.webp";
 import graphHack1 from "./assets/img/graph-hack-1.JPG";
@@ -18,6 +19,7 @@ import { impactData } from "./data";
 import { CustomCard } from "./components/CustomCard";
 import "./App.css";
 import "./assets/css/card.scss";
+import { TeamSection } from "./components/Team";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
@@ -37,6 +39,15 @@ function App() {
   //   //   scrub: 1,
   //   // });
   // }); // <-- scope is for selector text (optional)
+
+  const scrollToElementBySelector = (selector) => {
+    const element = document.querySelector(selector);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn(`Element with selector ${selector} not found.`);
+    }
+  };
 
   const randomizeCardTiles = (card) => {
     const tiles = card.querySelectorAll(".custom-card-container .tile");
@@ -246,24 +257,24 @@ function App() {
     }
 
     // Make the eventSection draggable on the horizontal axis
-    Draggable.create(eventSection, {
-      type: "x",
-      inertia: true,
-      bounds: eventSection,
-      onDrag() {
-        scrubTo(scrub.vars.totalTime + this.getDirection().x * spacing);
-      },
-      onThrowUpdate() {
-        scrubTo(scrub.vars.totalTime + this.getDirection().x * spacing);
-      },
-    });
+    // Draggable.create(eventSection, {
+    //   type: "x",
+    //   inertia: true,
+    //   bounds: eventSection,
+    //   onDrag() {
+    //     scrubTo(scrub.vars.totalTime + this.getDirection().x * spacing);
+    //   },
+    //   onThrowUpdate() {
+    //     scrubTo(scrub.vars.totalTime + this.getDirection().x * spacing);
+    //   },
+    // });
   }, []);
 
   return (
-    <div className="">
+    <>
       <header className="min-w-full fixed top-0 py-2 z-50 bg-[#ffffff38] backdrop-blur-[1px]">
         <nav className="container mx-auto flex justify-between items-center px-6">
-          <a href="#">
+          <a href="/">
             <img className="w-32" src={logoSvg} alt="Web3 Warri Logo" />
           </a>
 
@@ -273,7 +284,7 @@ function App() {
                 className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
                 href="#"
               >
-                Home
+                About Us
               </a>
             </li>
             <li className="relative pt-2 font-medium">
@@ -286,10 +297,53 @@ function App() {
             </li>
             <li className="relative pt-2 font-medium">
               <a
+                className="flex items-center gap-1 after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
+                href="https://medium.com/web3-warri"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Blog
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="#000000"
+                >
+                  <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                  <g
+                    id="SVGRepo_tracerCarrier"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></g>
+                  <g id="SVGRepo_iconCarrier">
+                    {" "}
+                    <path
+                      stroke="#000000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 6H7a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-5m-6 0 7.5-7.5M15 3h6v6"
+                    ></path>{" "}
+                  </g>
+                </svg>
+              </a>
+            </li>
+            <li className="relative pt-2 font-medium">
+              <a
                 className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
                 href="#"
               >
                 Team
+              </a>
+            </li>
+            <li className="relative pt-2 font-medium">
+              <a
+                className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
+                href="#"
+              >
+                Support
               </a>
             </li>
           </ul>
@@ -568,12 +622,113 @@ function App() {
           </div>
           <img className="rounded-xl" src={graphHack1} />
         </section>
+        <TeamSection />
 
-        <div className="h-[50dvh] bg-cyan-300  mb-6"></div>
+        {/* <div className="h-[50dvh] bg-cyan-300  mb-6"></div>
         <div className="h-[50dvh] bg-slate-300  mb-6"></div>
-        <div className="h-[50dvh] bg-yellow-300  mb-6"></div>
+        <div className="h-[50dvh] bg-yellow-300  mb-6"></div> */}
       </main>
-    </div>
+      <footer className="relative py-14 bg-black text-white font-openSans">
+        <div className="container flex flex-col  px-8">
+          <div className="flex items-center justify-between gap-4 w-full">
+            <a href="/">
+              <img className="w-32" src={logoWhiteSvg} alt="Web3 Warri Logo" />
+            </a>{" "}
+            <div className="flex items-center gap-3">
+              <a className="text-sm font-medium cursor-pointer hover:underline">
+                About Us
+              </a>
+              <a className="text-sm font-medium cursor-pointer hover:underline">
+                Events
+              </a>
+              <a
+                href="https://medium.com/web3-warri"
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-medium cursor-pointer hover:underline"
+              >
+                Blog
+              </a>
+              <a className="text-sm font-medium cursor-pointer hover:underline">
+                Team
+              </a>
+              <a className="text-sm font-medium cursor-pointer hover:underline">
+                Support
+              </a>
+            </div>
+            <button className="btn-inverted">Join Our Community</button>
+          </div>
+          <div className="flex h-[2px] w-full border-b border-white/20 my-8"></div>
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center gap-3">
+              &copy; Web3 Warri. {new Date().getFullYear()} All rights reserved.
+            </div>
+            <div className="flex items-center gap-3">
+              <a
+                href=""
+                className="cursor-pointer text-gray-400 hover:text-white"
+              >
+                {/* linkedin */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+                </svg>
+              </a>
+              <a
+                href=""
+                className="cursor-pointer text-gray-400 hover:text-white"
+              >
+                {/* x */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M214.75,211.71l-62.6-98.38,61.77-67.95a8,8,0,0,0-11.84-10.76L143.24,99.34,102.75,35.71A8,8,0,0,0,96,32H48a8,8,0,0,0-6.75,12.3l62.6,98.37-61.77,68a8,8,0,1,0,11.84,10.76l58.84-64.72,40.49,63.63A8,8,0,0,0,160,224h48a8,8,0,0,0,6.75-12.29ZM164.39,208,62.57,48h29L193.43,208Z"></path>
+                </svg>
+              </a>
+              <a
+                href=""
+                className="cursor-pointer text-gray-400 hover:text-white"
+              >
+                {/* medium */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M72,64a64,64,0,1,0,64,64A64.07,64.07,0,0,0,72,64Zm0,112a48,48,0,1,1,48-48A48.05,48.05,0,0,1,72,176ZM184,64c-5.68,0-16.4,2.76-24.32,21.25C154.73,96.8,152,112,152,128s2.73,31.2,7.68,42.75C167.6,189.24,178.32,192,184,192s16.4-2.76,24.32-21.25C213.27,159.2,216,144,216,128s-2.73-31.2-7.68-42.75C200.4,66.76,189.68,64,184,64Zm0,112c-5.64,0-16-18.22-16-48s10.36-48,16-48,16,18.22,16,48S189.64,176,184,176ZM248,72V184a8,8,0,0,1-16,0V72a8,8,0,0,1,16,0Z"></path>
+                </svg>
+              </a>
+              <a
+                href=""
+                className="cursor-pointer text-gray-400 hover:text-white"
+              >
+                {/* email */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 256 256"
+                >
+                  <path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
   );
 }
 
