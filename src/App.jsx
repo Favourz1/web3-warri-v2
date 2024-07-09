@@ -282,7 +282,8 @@ function App() {
             <li className="relative pt-2 font-medium">
               <a
                 className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
-                href="#"
+                role="button"
+                onClick={() => scrollToElementBySelector("#weValue-section")}
               >
                 About Us
               </a>
@@ -290,7 +291,10 @@ function App() {
             <li className="relative pt-2 font-medium">
               <a
                 className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
-                href="#"
+                role="button"
+                onClick={() =>
+                  scrollToElementBySelector("#events-section-container")
+                }
               >
                 Events
               </a>
@@ -333,17 +337,10 @@ function App() {
             <li className="relative pt-2 font-medium">
               <a
                 className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
-                href="#"
+                role="button"
+                onClick={() => scrollToElementBySelector("#team")}
               >
                 Team
-              </a>
-            </li>
-            <li className="relative pt-2 font-medium">
-              <a
-                className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
-                href="#"
-              >
-                Support
               </a>
             </li>
           </ul>
@@ -364,6 +361,16 @@ function App() {
           className="relative mb-5 pt-1 bg-center bg-cover bg-[url('./assets/img/hero-bg.gif')]"
           style={{ backgroundImage: heroBg }}
         >
+          {/* <img
+            src={graphHack1}
+            alt=""
+            className="absolute bottom-10 -right-6 rounded-lg object-cover h-52 w-96 animate-floating"
+          /> */}
+          {/* <img
+            src={DelsuArbEvent1}
+            alt=""
+            className="absolute top-4 -left-6 rounded-lg object-cover h-24 w-32 animate-floating"
+          /> */}
           {/* <video
             className="absolute top-0 left-0 w-screen h-screen -z-10"
             playsInline
@@ -377,7 +384,10 @@ function App() {
           </video> */}
           <div className="container mx-auto px-6 min-h-dvh max-h-dvh">
             <div className="flex flex-col items-center justify-center min-h-[inherit]">
-              <div className="flex items-center gap-2 p-2 text-sm bg-[#f4f4f403] border border-[#ddd] rounded-3xl mb-4 cursor-pointer hover:bg-[#f4f4f4]">
+              <div
+                className="flex items-center gap-2 p-2 text-sm bg-[#f4f4f403] border border-[#ddd] rounded-3xl mb-4 cursor-pointer hover:bg-[#f4f4f4]"
+                onClick={() => scrollToElementBySelector("#impact-section")}
+              >
                 <span className="flex items-center px-2 py-1 bg-black text-white rounded-3xl">
                   Update
                 </span>
@@ -528,7 +538,7 @@ function App() {
           </div>
         </section>
 
-        <section className="relative py-8">
+        <section id="impact-section" className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
               <h1 className="text-3xl font-semibold mb-6">
@@ -550,7 +560,7 @@ function App() {
             </div>
           </div>
         </section>
-        <section className="relative py-8">
+        <section id="weValue-section" className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
               <div className="flex flex-col items-center mb-8 text-center">
@@ -635,10 +645,20 @@ function App() {
               <img className="w-32" src={logoWhiteSvg} alt="Web3 Warri Logo" />
             </a>{" "}
             <div className="flex items-center gap-3">
-              <a className="text-sm font-medium cursor-pointer hover:underline">
+              <a
+                className="text-sm font-medium cursor-pointer hover:underline"
+                role="button"
+                onClick={() => scrollToElementBySelector("#weValue-section")}
+              >
                 About Us
               </a>
-              <a className="text-sm font-medium cursor-pointer hover:underline">
+              <a
+                className="text-sm font-medium cursor-pointer hover:underline"
+                role="button"
+                onClick={() =>
+                  scrollToElementBySelector("#events-section-container")
+                }
+              >
                 Events
               </a>
               <a
@@ -649,7 +669,11 @@ function App() {
               >
                 Blog
               </a>
-              <a className="text-sm font-medium cursor-pointer hover:underline">
+              <a
+                className="text-sm font-medium cursor-pointer hover:underline"
+                role="button"
+                onClick={() => scrollToElementBySelector("#team")}
+              >
                 Team
               </a>
               <a className="text-sm font-medium cursor-pointer hover:underline">
