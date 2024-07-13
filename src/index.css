@@ -27,11 +27,11 @@ html{
 
 *{
   box-sizing: border-box;
-  transition: 0.3s ease-in-out;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
+  transition: 0.15s ease-in-out;
+  -webkit-transition: 0.15s ease-in-out;
+  -moz-transition: 0.15s ease-in-out;
+  -ms-transition: 0.15s ease-in-out;
+  -o-transition: 0.15s ease-in-out;
 }
 
 
@@ -180,9 +180,8 @@ body {
 	width: 14rem;
 	height: 18rem;
 	text-align: center;
-	line-height: 18rem;
-	font-size: 2rem;
-	font-family: sans-serif;
+	/* line-height: 18rem; */
+	/* font-size: 2rem; */
 	background-color: white;
 	position: absolute;
 	top: 0;

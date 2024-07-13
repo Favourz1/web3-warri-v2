@@ -4,22 +4,26 @@ import { useEffect } from "react";
 import logoSvg from "./assets/img/logo.svg";
 import logoWhiteSvg from "./assets/img/logo-white.svg";
 import heroBg from "./assets/img/hero-bg.gif";
+import contactImg from "./assets/img/contact-img.png";
+// import web3Coin from "./assets/img/web3-coin.png";
 import DelsuArbEvent1 from "./assets/img/web3-warri-DELSU.webp";
+import FupreArbEvent1 from "./assets/img/web3Warri-arbitrum-fupre-316.png";
 import graphHack1 from "./assets/img/graph-hack-1.JPG";
 import theGraphLogo from "./assets/logos/the-graph-logo.png";
 import ethLogo from "./assets/logos/eth-logo.svg";
 import arbitrumLogo from "./assets/logos/arbitrum-logo.svg";
-import charlesDelsuVidMp4 from "./assets/video/charles-delsu-web3-Warri.mp4";
-import charlesDelsuVidMov from "./assets/video/charles-delsu-web3-Warri.mov";
+// import charlesDelsuVidMp4 from "./assets/video/charles-delsu-web3-Warri.mp4";
+// import charlesDelsuVidMov from "./assets/video/charles-delsu-web3-Warri.mov";
 import pointingHandEmoji from "./assets/img/pointing-hand-emoji.png";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, Draggable } from "gsap/all";
-import { impactData } from "./data";
+import { eventsData, impactData } from "./data";
 import { CustomCard } from "./components/CustomCard";
 import "./App.css";
 import "./assets/css/card.scss";
 import { TeamSection } from "./components/Team";
+import { EventCard } from "./components/EventCard";
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
@@ -283,7 +287,7 @@ function App() {
               <a
                 className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
                 role="button"
-                onClick={() => scrollToElementBySelector("#weValue-section")}
+                onClick={() => scrollToElementBySelector("#aboutUs-section")}
               >
                 About Us
               </a>
@@ -347,10 +351,11 @@ function App() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#"
+              role="button"
               className="hidden md:inline-flex relative pt-2 font-medium after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-[2px] after:scale-x-0 hover:after:scale-x-100"
+              onClick={() => scrollToElementBySelector("#contactUs-section")}
             >
-              Support
+              Contact
             </a>
             <button className="btn">Join Us</button>
           </div>
@@ -362,9 +367,9 @@ function App() {
           style={{ backgroundImage: heroBg }}
         >
           {/* <img
-            src={graphHack1}
+            src={web3Coin}
             alt=""
-            className="absolute bottom-10 -right-6 rounded-lg object-cover h-52 w-96 animate-floating"
+            className="absolute bottom-10 -left-16 rounded-lg object-contain h-52 w-96 animate-floating opacity-50"
           /> */}
           {/* <img
             src={DelsuArbEvent1}
@@ -439,7 +444,8 @@ function App() {
                 <div className="relative">
                   <span
                     className="after:transition-all after:ease-in-out after:duration-300 after:bg-black after:content-[''] after:h-[2px] after:w-full after:left-0 after:absolute after:-bottom-1 after:scale-x-100"
-                    href="#"
+                    href="https://chat.whatsapp.com/Jmkd0a3ooSTISUT9rZo44u"
+                    target="_blank"
                   >
                     Join Our Community
                   </span>
@@ -494,22 +500,8 @@ function App() {
         <section id="events-section-container" className=" relative py-8">
           <h1 className="text-3xl font-semibold text-center mb-6">Events</h1>
           <ul className="event-section__cards-wrapper">
-            {[...Array(31)].map((_, index) => (
-              <li key={index}>
-                <div className="group relative flex flex-col justify-between text-white p-4 rounded-lg min-h-[400px] min-w-[350px] -ml-[50px] border-2 border-gray-400 bg-[url('./assets/img/web3-warri-DELSU.webp')] bg-cover bg-no-repeat before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-full  hover:before:bg-[#0d0a143e]">
-                  <h3 className="text-2xl font-semibold font-raleway z-[2]">
-                    Introduction To Subgraph {index}
-                  </h3>
-
-                  <div className="flex flex-col gap-3 z-[2]">
-                    <p className="text-lg font-openSans">
-                      We are going to dive deep into building of subgraph with
-                      graph protocol
-                    </p>
-                    <p className="text-sm underline cursor-pointer">Register</p>
-                  </div>
-                </div>
-              </li>
+            {eventsData.reverse().map((data, index) => (
+              <EventCard data={data} key={index} />
             ))}
           </ul>
           <div className="event-section__actions flex items-center gap-4">
@@ -546,7 +538,7 @@ function App() {
               </h1>
               <div className="custom-card-container light">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-12 flex-wrap">
-                  {impactData.map((item, index) => (
+                  {impactData.slice(0, 3).map((item, index) => (
                     <CustomCard
                       key={index}
                       title={item.title}
@@ -560,7 +552,32 @@ function App() {
             </div>
           </div>
         </section>
-        <section id="weValue-section" className="relative py-8">
+        <section id="aboutUs-section" className="relative py-8">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col items-center w-full">
+              <div className="flex flex-col items-center mb-8 text-center">
+                <h1 className="flex items-center justify-center gap-3 text-3xl text-center font-semibold mb-5">
+                  <span>About Us</span>
+                </h1>
+                <div className="flex gap-4">
+                  <div className="w-full md:w-[40]">
+                    <img
+                      className="rounded-xl object-cover"
+                      src={FupreArbEvent1}
+                      alt=""
+                    />
+                  </div>
+                  <div className="w-full md:w-[60]">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Architecto, in praesentium temporibus minus laborum maiores
+                    qui accusamus quam ea eaque!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* <section id="weValue-section" className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
               <div className="flex flex-col items-center mb-8 text-center">
@@ -588,7 +605,7 @@ function App() {
               </video>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <section className="relative py-8">
           <div className="container mx-auto px-6">
@@ -613,7 +630,12 @@ function App() {
               <p className="text-base mb-4">
                 Become a part of our inclusive and innovative Web 3.0 journey!
               </p>
-              <a href="" className="btn">
+              <a
+                href="https://chat.whatsapp.com/Jmkd0a3ooSTISUT9rZo44u"
+                target="_blank"
+                rel="noreferrer"
+                className="btn"
+              >
                 Join Us
               </a>
             </div>
@@ -633,6 +655,45 @@ function App() {
           <img className="rounded-xl" src={graphHack1} />
         </section>
         <TeamSection />
+        <section id="contactUs-section" className="relative py-8">
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col items-center w-full">
+              <div className="flex flex-col items-center mb-8 text-center">
+                <div className="flex items-center justify-center gap-4">
+                  <div className="w-full md:w-[60]">
+                    <h1 className="text-3xl font-semibold mb-6">Contact Us</h1>
+                    <p className="text-xl font-medium font-raleway">
+                      Have questions, ideas, or interested in partnerships?
+                      <br />
+                      Reach out to us!
+                    </p>
+                    <div className="flex items-center justify-center gap-3 mt-8">
+                      <a
+                        className="btn bg-transparent border-black border text-black"
+                        href="mailto:charles.eteure@gmail.com?subject=Inquiries%20on%20Web3%20Warri&body=Hello,%20I%20am%20messaging%20from%20the%20Web3%20Warri%20Website%20and%20need%20to%20make%20inquiries%20on..."
+                      >
+                        Contact Founder
+                      </a>
+                      <a
+                        className="btn"
+                        href="mailto:warriweb3@gmail.com?subject=Inquiries%20on%20Web3%20Warri&body=Hello,%20I%20am%20messaging%20from%20the%20Web3%20Warri%20Website%20and%20need%20to%20make%20inquiries%20on..."
+                      >
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                  <div className="w-full md:w-[40]">
+                    <img
+                      className="rounded-xl object-cover w-[80%]"
+                      src={contactImg}
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* <div className="h-[50dvh] bg-cyan-300  mb-6"></div>
         <div className="h-[50dvh] bg-slate-300  mb-6"></div>
@@ -648,7 +709,7 @@ function App() {
               <a
                 className="text-sm font-medium cursor-pointer hover:underline"
                 role="button"
-                onClick={() => scrollToElementBySelector("#weValue-section")}
+                onClick={() => scrollToElementBySelector("#aboutUs-section")}
               >
                 About Us
               </a>
@@ -676,11 +737,22 @@ function App() {
               >
                 Team
               </a>
-              <a className="text-sm font-medium cursor-pointer hover:underline">
-                Support
+              <a
+                role="button"
+                className="text-sm font-medium cursor-pointer hover:underline"
+                onClick={() => scrollToElementBySelector("#contactUs-section")}
+              >
+                Contact
               </a>
             </div>
-            <button className="btn-inverted">Join Our Community</button>
+            <a
+              href="https://chat.whatsapp.com/Jmkd0a3ooSTISUT9rZo44u"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-inverted"
+            >
+              Join Our Community
+            </a>
           </div>
           <div className="flex h-[2px] w-full border-b border-white/20 my-8"></div>
           <div className="flex items-center justify-between text-sm">
