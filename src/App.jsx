@@ -5,9 +5,10 @@ import logoSvg from "./assets/img/logo.svg";
 import logoWhiteSvg from "./assets/img/logo-white.svg";
 import heroBg from "./assets/img/hero-bg.gif";
 import contactImg from "./assets/img/contact-img.png";
+import mouseAnimation from "./assets/img/mouse-animation.gif";
 // import web3Coin from "./assets/img/web3-coin.png";
 // import DelsuArbEvent1 from "./assets/img/web3-warri-DELSU.webp";
-import FupreArbEvent1 from "./assets/img/web3Warri-arbitrum-fupre-316.png";
+import FupreArbEvent1 from "./assets/img/web3Warri-arbitrum-fupre-316.webp";
 import graphHack1 from "./assets/img/graph-hack-1.JPG";
 import theGraphLogo from "./assets/logos/the-graph-logo.png";
 import ethLogo from "./assets/logos/eth-logo.svg";
@@ -98,9 +99,30 @@ function App() {
     return () => tl.kill();
   }, []);
 
+  useEffect(() => {
+    const showAnim = gsap
+      .from("#header", {
+        yPercent: -100,
+        paused: true,
+        duration: 0.2,
+      })
+      .progress(1);
+
+    ScrollTrigger.create({
+      start: "top top",
+      end: "max",
+      onUpdate: (self) => {
+        self.direction === -1 ? showAnim.play() : showAnim.reverse();
+      },
+    });
+  }, []);
+
   return (
     <>
-      <header className="min-w-full fixed top-0 py-2 z-50 bg-[#ffffff38] backdrop-blur-[1px]">
+      <header
+        id="header"
+        className="min-w-full fixed top-0 py-2 z-50 bg-[#ffffff38] backdrop-blur-[1px]"
+      >
         <nav className="container mx-auto flex justify-between items-center px-6">
           <a href="/">
             <img className="w-32" src={logoSvg} alt="Web3 Warri Logo" />
@@ -236,6 +258,7 @@ function App() {
 
               <h1 className="text-6xl text-center font-semibold mb-12">
                 Building the&nbsp;
+                <br className=" md:hidden" />
                 <span
                   className="text-transparent bg-clip-text"
                   style={{
@@ -271,13 +294,18 @@ function App() {
               </a>
             </div>
           </div>
+          <img
+            className="absolute bottom-12 left-1/2 right-1/2 -translate-x-1/2  w-6 h-6 object-contain"
+            src={mouseAnimation}
+            alt=""
+          />
         </section>
 
         <section className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
               <h1 className="text-3xl font-semibold mb-6">Our Partners</h1>
-              <div className="partner-logo-wrapper flex items-center justify-between gap-4 w-[70%]">
+              <div className="partner-logo-wrapper flex items-center justify-between gap-4 w-full md:w-[70%]">
                 <figure>
                   <img
                     className="partner-logo-1 min-w-24 w-52 h-auto grayscale hover:grayscale-0"
@@ -313,7 +341,7 @@ function App() {
                 <h1 className="flex items-center justify-center gap-3 text-3xl text-center font-semibold mb-5">
                   <span>About Us</span>
                 </h1>
-                <div className="flex gap-4">
+                <div className="flex flex-col md:flex-row gap-4">
                   <div className="w-full md:w-[40]">
                     <img
                       className="rounded-xl object-cover"
@@ -414,7 +442,7 @@ function App() {
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
               <div className="flex flex-col items-center mb-8 text-center">
-                <div className="flex items-center justify-center gap-4">
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4">
                   <div className="w-full md:w-[60]">
                     <h1 className="text-3xl font-semibold mb-6">Contact Us</h1>
                     <p className="text-xl font-medium font-raleway">
@@ -437,7 +465,7 @@ function App() {
                       </a>
                     </div>
                   </div>
-                  <div className="w-full md:w-[40]">
+                  <div className="w-full md:w-[40] hidden md:flex">
                     <img
                       className="rounded-xl object-cover w-[80%]"
                       src={contactImg}
@@ -452,7 +480,7 @@ function App() {
       </main>
       <footer className="relative py-14 bg-black text-white font-openSans">
         <div className="container flex flex-col  px-8">
-          <div className="flex items-center justify-between gap-4 w-full">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 w-full">
             <a href="/">
               <img className="w-32" src={logoWhiteSvg} alt="Web3 Warri Logo" />
             </a>{" "}

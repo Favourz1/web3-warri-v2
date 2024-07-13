@@ -22,7 +22,7 @@ const ImpactSection = () => {
     <section id="impact-section" className="relative py-8">
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center w-full">
-          <h1 className="text-3xl font-semibold mb-6">
+          <h1 className="text-3xl font-semibold text-center mb-6">
             How We Are Impacting The World
           </h1>
           <div className="custom-card-container light">
