@@ -31,7 +31,7 @@ export default [
     },
     {
         "id": 4,
-        "name": "Subgraph Meetup Official Photos",
+        "name": "Subgraph Meetup",
         "type": "meetup",
         "startDate": "2023-08-10",
         "endDate": "2023-08-10",
@@ -62,7 +62,7 @@ export default [
     {
         "id": 7,
         "name": "Arbitrum University event at FUPRE",
-        "type": "workshop",
+        "type": "meetup",
         "startDate": "2023-10-10",
         "endDate": "2023-10-10",
         "photosUrl": "https://drive.google.com/drive/folders/1dOqdRQuvTbTdeY6OPbyggd-nIASzw1A0?usp=sharing",
@@ -72,7 +72,7 @@ export default [
     {
         "id": 8,
         "name": "Arbitrum University event at DELSU",
-        "type": "workshop",
+        "type": "meetup",
         "startDate": "2023-11-01",
         "endDate": "2023-11-01",
         "photosUrl": "https://photos.app.goo.gl/8eERVfMBZcowb7zFA",
@@ -82,7 +82,7 @@ export default [
     {
         "id": 9,
         "name": "New Event",
-        "type": "workshop",
+        "type": "meetup",
         "startDate": "2024-11-01",
         "endDate": "2024-11-02",
         "photosUrl": "https://photos.app.goo.gl/8eERVfMBZcowb7zFA",
