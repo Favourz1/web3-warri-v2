@@ -337,11 +337,11 @@ function App() {
         <section id="aboutUs-section" className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
-              <div className="flex flex-col items-center mb-8 text-center">
+              <div className="flex flex-col items-center mb-8">
                 <h1 className="flex items-center justify-center gap-3 text-3xl text-center font-semibold mb-5">
                   <span>About Us</span>
                 </h1>
-                <div className="flex flex-col md:flex-row gap-4">
+                <div className="flex flex-col md:items-center md:flex-row gap-4">
                   <div className="w-full md:w-[40]">
                     <img
                       className="rounded-xl object-cover"
@@ -349,10 +349,20 @@ function App() {
                       alt=""
                     />
                   </div>
-                  <div className="w-full md:w-[60]">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Architecto, in praesentium temporibus minus laborum maiores
-                    qui accusamus quam ea eaque!
+                  <div className="w-full md:w-[60] font-openSans">
+                    Web3 Warri is a dynamic community of blockchain developers,
+                    builders, and tech enthusiasts, launched in February 2023.
+                    <br />
+                    We focus on decentralized technologies, fostering growth
+                    through meetups, workshops, and hackathons. Dedicated to
+                    inclusivity, we support women and underrepresented groups.
+                    <br />
+                    <br />
+                    Our goal is to onboard 1000+ developers by mid-2025.
+                    <br />
+                    Join us to advance blockchain technology, collaborate, and
+                    drive global impact. Partner with us to shape the future of
+                    Web 3.0.
                   </div>
                 </div>
               </div>
