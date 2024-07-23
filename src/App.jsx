@@ -203,7 +203,14 @@ function App() {
             >
               Contact
             </a>
-            <button className="btn">Join Us</button>
+            <a
+              href="https://chat.whatsapp.com/Jmkd0a3ooSTISUT9rZo44u"
+              target="_blank"
+              rel="noreferrer"
+              className="btn"
+            >
+              Join Us
+            </a>
           </div>
         </nav>
       </header>
