@@ -1,10 +1,28 @@
 /* eslint-disable react/prop-types */
-const CustomCard = ({ title = "", bodyText = "", icon, animate = false }) => {
+const CustomCard = ({
+  id,
+  title = "",
+  bodyText = "",
+  icon,
+  animate = false,
+}) => {
   return (
     <div className={`card ${animate ? "hover-animation" : ""}`}>
-      <span className="icon">{icon}</span>
-      <h4>{title}</h4>
-      <p>{bodyText}</p>
+      <div className="flex items-center justify-center gap-3">
+        <span className="icon">{icon}</span>
+        {/* <h4 className="text-center">{title}</h4> */}
+      </div>
+      {id !== 4 && <p>{bodyText}</p>}
+      {id === 4 && (
+        <p className="flex flex-col">
+          <p className="font-medium">By the numbers:</p>
+          <ul className="list-disc pl-6">
+            <li>450 plus members</li>
+            <li>2 day hackathon organized</li>
+            <li>10 plus workshops/meetups</li>
+          </ul>
+        </p>
+      )}
       <div className="shine"></div>
       <div className="background">
         <div className="tiles">

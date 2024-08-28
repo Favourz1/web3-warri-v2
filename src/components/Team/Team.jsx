@@ -1,6 +1,6 @@
 import charlesFreeborn from "../../assets/img/charlesfreeborn.jfif";
 import marthaFreeborn from "../../assets/img/martha_freeborn.webp";
-import favourOkoh from "../../assets/img/favour-okoh.png";
+import favourOkoh from "../../assets/img/favour-okoh.webp";
 
 const Team = () => {
   return (
@@ -9,7 +9,7 @@ const Team = () => {
         <div className="team-section__main-title text-4xl font-bold font-inter mb-10 text-center md:text-left">
           Our Team
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-[80px] w-full place-content-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[80px] w-full place-content-center">
           <div
             className="team-section__item"
             data-aos="fade-right"
@@ -67,6 +67,12 @@ const Team = () => {
                   </svg>
                 </a>
               </div>
+              <a
+                href="mailto:charles.eteure@gmail.com"
+                className="text-sm underline absolute bottom-[-20px] left-1/2 -translate-x-1/2"
+              >
+                charles.eteure@gmail.com
+              </a>
             </div>
           </div>
           <div

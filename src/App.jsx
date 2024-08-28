@@ -9,9 +9,9 @@ import mouseAnimation from "./assets/img/mouse-animation.gif";
 // import web3Coin from "./assets/img/web3-coin.png";
 // import DelsuArbEvent1 from "./assets/img/web3-warri-DELSU.webp";
 import FupreArbEvent1 from "./assets/img/web3Warri-arbitrum-fupre-316.webp";
-import graphHack1 from "./assets/img/graph-hack-1.JPG";
+import graphHack1 from "./assets/img/graph-hack-1.webp";
 import theGraphLogo from "./assets/logos/the-graph-logo.png";
-import ethLogo from "./assets/logos/eth-logo.svg";
+// import ethLogo from "./assets/logos/eth-logo.svg";
 import arbitrumLogo from "./assets/logos/arbitrum-logo.svg";
 // import charlesDelsuVidMp4 from "./assets/video/charles-delsu-web3-Warri.mp4";
 // import charlesDelsuVidMov from "./assets/video/charles-delsu-web3-Warri.mov";
@@ -311,8 +311,10 @@ function App() {
         <section className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
-              <h1 className="text-3xl font-semibold mb-6">Our Partners</h1>
-              <div className="partner-logo-wrapper flex items-center justify-between gap-4 w-full md:w-[70%]">
+              <h1 className="text-3xl font-semibold mb-6 text-center">
+                Our Previous Sponsors and Partners
+              </h1>
+              <div className="partner-logo-wrapper flex items-center justify-center gap-8 w-full md:w-[70%] mb-6">
                 <figure>
                   <img
                     className="partner-logo-1 min-w-24 w-52 h-auto grayscale hover:grayscale-0"
@@ -320,13 +322,13 @@ function App() {
                     alt="The Graph Logo"
                   />
                 </figure>
-                <figure>
+                {/* <figure>
                   <img
                     className="partner-logo-2 min-w-24 w-52 h-auto grayscale hover:grayscale-0"
                     src={ethLogo}
                     alt="Ethereum Logo"
                   />
-                </figure>
+                </figure> */}
                 <figure>
                   <img
                     className="partner-logo-3 min-w-24 w-52 h-auto grayscale hover:grayscale-0"
@@ -335,20 +337,22 @@ function App() {
                   />
                 </figure>
               </div>
+              <a className="btn" href="mailto:charles.eteure@gmail.com">
+                Become A Partner
+              </a>
             </div>
           </div>
         </section>
 
         <EventSection />
-        <ImpactSection />
         <section id="aboutUs-section" className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
               <div className="flex flex-col items-center mb-8">
-                <h1 className="flex items-center justify-center gap-3 text-3xl text-center font-semibold mb-5">
+                {/* <h1 className="flex items-center justify-center gap-3 text-3xl text-center font-semibold mb-5">
                   <span>About Us</span>
-                </h1>
-                <div className="flex flex-col md:items-center md:flex-row gap-4">
+                </h1> */}
+                <div className="flex flex-col md:items-center  md:flex-row gap-4">
                   <div className="w-full md:w-[40]">
                     <img
                       className="rounded-xl object-cover"
@@ -356,16 +360,27 @@ function App() {
                       alt=""
                     />
                   </div>
-                  <div className="w-full md:w-[60] font-openSans">
-                    Web3 Warri is a dynamic community of blockchain developers,
-                    builders, and tech enthusiasts, launched in February 2023.
+                  <div className="w-full md:w-[60] font-openSans leading-7 ">
+                    <h1 className="flex items-center justify-center gap-3 text-3xl text-center font-semibold mb-5">
+                      <span>About Us</span>
+                    </h1>
+                    The web3 Warri community - which began officially in
+                    February 2023 - is a community of (and for) blockchain
+                    developers, smart contract developers, builders, technical
+                    writers, open-source contributors, and tech enthusiasts
+                    interested in building the next generation of the internet
+                    through collaborative learning, meetups, workshops,
+                    hackathons, and conferences.
                     <br />
-                    We focus on decentralized technologies, fostering growth
-                    through meetups, workshops, and hackathons. Dedicated to
-                    inclusivity, we support women and underrepresented groups.
+                    <br />
+                    Our community is committed to fostering the development,
+                    growth, and adoption of blockchain technology and the larger
+                    web3 ecosystem. Web3
                     <br />
                     <br />
-                    Our goal is to onboard 1000+ developers by mid-2025.
+                    As a web3 community, we are committed to diversity and
+                    inclusivity, supporting women and under-represented groups.
+                    <br />
                     <br />
                     Join us to advance blockchain technology, collaborate, and
                     drive global impact. Partner with us to shape the future of
@@ -376,6 +391,7 @@ function App() {
             </div>
           </div>
         </section>
+        <ImpactSection />
 
         {/* <section id="weValue-section" className="relative py-8">
           <div className="container mx-auto px-6">
@@ -444,7 +460,7 @@ function App() {
 
         <section className="fullwidth-image py-8">
           <div className="fullwidth-image__overlay"></div>
-          <div className="fullwidth-image__text">
+          <div className="fullwidth-image__text min-w-full md:min-w-auto">
             <h2>Your Gateway to Web3 Mastery</h2>
             <p>
               Connect with passionate blockchain enthusiasts and experts.
@@ -468,17 +484,17 @@ function App() {
                       Reach out to us!
                     </p>
                     <div className="flex items-center justify-center gap-3 mt-8">
-                      <a
+                      {/* <a
                         className="btn bg-transparent border-black border text-black"
                         href="mailto:charles.eteure@gmail.com?subject=Inquiries%20on%20Web3%20Warri&body=Hello,%20I%20am%20messaging%20from%20the%20Web3%20Warri%20Website%20and%20need%20to%20make%20inquiries%20on..."
                       >
                         Contact Founder
-                      </a>
+                      </a> */}
                       <a
-                        className="btn"
+                        className="underline"
                         href="mailto:warriweb3@gmail.com?subject=Inquiries%20on%20Web3%20Warri&body=Hello,%20I%20am%20messaging%20from%20the%20Web3%20Warri%20Website%20and%20need%20to%20make%20inquiries%20on..."
                       >
-                        Contact Us
+                        warriweb3@gmail.com
                       </a>
                     </div>
                   </div>
@@ -557,7 +573,9 @@ function App() {
             </div>
             <div className="flex items-center gap-3">
               <a
-                href=""
+                href="https://www.linkedin.com/company/web3-warri/"
+                target="_blank"
+                rel="noreferrer"
                 className="cursor-pointer text-gray-400 hover:text-white"
               >
                 {/* linkedin */}
@@ -572,7 +590,9 @@ function App() {
                 </svg>
               </a>
               <a
-                href=""
+                href="https://x.com/web3_warri"
+                target="_blank"
+                rel="noreferrer"
                 className="cursor-pointer text-gray-400 hover:text-white"
               >
                 {/* x */}
@@ -587,7 +607,9 @@ function App() {
                 </svg>
               </a>
               <a
-                href=""
+                href="https://medium.com/web3-warri"
+                target="_blank"
+                rel="noreferrer"
                 className="cursor-pointer text-gray-400 hover:text-white"
               >
                 {/* medium */}
@@ -602,7 +624,7 @@ function App() {
                 </svg>
               </a>
               <a
-                href=""
+                href="mailto:warriweb3@gmail.com"
                 className="cursor-pointer text-gray-400 hover:text-white"
               >
                 {/* email */}

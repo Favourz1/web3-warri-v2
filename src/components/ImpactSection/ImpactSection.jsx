@@ -23,13 +23,14 @@ const ImpactSection = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center w-full">
           <h1 className="text-3xl font-semibold text-center mb-6">
-            How We Are Impacting The World
+            Vision and Goals
           </h1>
           <div className="custom-card-container light">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 md:gap-12 flex-wrap">
-              {impactData.slice(0, 3).map((item, index) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-12 flex-wrap">
+              {impactData.slice(0, 4).map((item, index) => (
                 <CustomCard
                   key={index}
+                  id={item.id}
                   title={item.title}
                   bodyText={item["write_up"]}
                   icon={item.icon}

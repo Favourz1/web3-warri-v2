@@ -208,6 +208,71 @@ body {
 	transform: translateX(-50%);
 }
 
+
+#Numbers{
+  fill:none;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke: #333;
+  stroke-width: 4;
+  /**/
+  animation: dash 10s linear infinite alternate;
+  /**/
+}
+
+@keyframes dash {
+   /* 1 */   0% {stroke-dasharray: 159,99999; stroke-dashoffset:     0;}
+  /*\1 */   5% {stroke-dasharray: 159,99999; stroke-dashoffset:     0;}
+  
+  /*   */   7% {stroke-dasharray:  50,99999; stroke-dashoffset:  -209;}
+  
+  /* 2 */  10% {stroke-dasharray: 394,99999; stroke-dashoffset:  -209;}
+  /*\2 */  15% {stroke-dasharray: 394,99999; stroke-dashoffset:  -209;}
+  
+  /*   */  17% {stroke-dasharray:  50,99999; stroke-dashoffset:  -629;}
+  
+  /* 3 */  20% {stroke-dasharray: 376,99999; stroke-dashoffset:  -629;}
+  /*\3 */  25% {stroke-dasharray: 376,99999; stroke-dashoffset:  -629;}
+  
+  /*   */  27% {stroke-dasharray:  50,99999; stroke-dashoffset: -1053;}
+  
+  /* 4 */  30% {stroke-dasharray: 224,99999; stroke-dashoffset: -1053;}
+  /*\4 */  35% {stroke-dasharray: 224,99999; stroke-dashoffset: -1053;}
+  
+  /*   */  37% {stroke-dasharray:  50,99999; stroke-dashoffset: -1342;}
+  
+  /* 5 */  40% {stroke-dasharray: 394,99999; stroke-dashoffset: -1342;}
+  /*\5 */  45% {stroke-dasharray: 394,99999; stroke-dashoffset: -1342;}
+  
+  /*   */  47% {stroke-dasharray:  50,99999; stroke-dashoffset: -1777;}
+  
+  /* 6 */  50% {stroke-dasharray: 423,99999; stroke-dashoffset: -1777;}
+  /*\6 */  55% {stroke-dasharray: 423,99999; stroke-dashoffset: -1777;}
+  
+  /*   */  57% {stroke-dasharray:  50,99999; stroke-dashoffset: -2252;}
+  
+  /* 7 */  60% {stroke-dasharray: 180,99999; stroke-dashoffset: -2252;}
+  /*\7 */  65% {stroke-dasharray: 180,99999; stroke-dashoffset: -2252;}
+  
+  /*   */  67% {stroke-dasharray:  50,99999; stroke-dashoffset: -2434;}
+  
+  /* 8 */  70% {stroke-dasharray: 374,99999; stroke-dashoffset: -2434;}
+  /*\8 */  75% {stroke-dasharray: 374,99999; stroke-dashoffset: -2434;}
+  
+  /*   */  77% {stroke-dasharray:  50,99999; stroke-dashoffset: -2876;}
+  
+  /* 9 */  80% {stroke-dasharray: 423,99999; stroke-dashoffset: -2876;}
+  /*\9 */  85% {stroke-dasharray: 423,99999; stroke-dashoffset: -2876;}
+  
+  /*   */  87% {stroke-dasharray:  50,99999; stroke-dashoffset: -3377;}
+  
+  /* 0 */  90% {stroke-dasharray: 340,99999; stroke-dashoffset: -3377;}
+  /*\0 */  95% {stroke-dasharray: 340,99999; stroke-dashoffset: -3377;}
+ 
+
+  /* 1 */ 100% {stroke-dasharray: 340,99999; stroke-dashoffset: -3377;}
+}
+
 .join-us {
     display: grid;
     place-items: center;
@@ -282,6 +347,7 @@ body {
 }
 
 .team-section__item-wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -320,6 +386,7 @@ body {
 }
 
 .team-section__item__user-wrapper {
+  position: relative;
   font-size: 15px;
   font-weight: 500;
   line-height: 1.5;
