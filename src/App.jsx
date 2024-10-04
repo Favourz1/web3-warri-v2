@@ -27,6 +27,7 @@ import { ImpactSection } from "./components/ImpactSection";
 import { EventSection } from "./components/EventSection";
 import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
 import "@leenguyen/react-flip-clock-countdown/dist/index.css";
+import { ImageSlider } from "./components/ImageSlider";
 
 // gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger, Draggable);
@@ -419,6 +420,7 @@ function App() {
             </div>
           </div>
         </section>
+        <ImageSlider />
         <ImpactSection />
         {/* <section id="weValue-section" className="relative py-8">
           <div className="container mx-auto px-6">

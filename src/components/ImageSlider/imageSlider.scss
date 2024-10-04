@@ -1,0 +1,42 @@
+$n:5; /* number of images*/
+
+.image-slider-gallery  {
+  --d: 20s; /* duration */
+  
+  display: grid;
+  overflow: hidden;
+  width: 90%;
+//   height: 60vh;
+//   max-height: 60vh;
+  margin: 0 auto;
+  -webkit-mask: linear-gradient(90deg,#0000,#000 10% 90%,#0000);
+}
+.image-slider-gallery > img {
+  grid-area: 1/1;
+  width: 100%;
+  height: 400px;
+  aspect-ratio: 1.5;
+//   object-fit: cover;
+  animation: r var(--d) linear infinite;
+  -webkit-animation: r var(--d) linear infinite;
+}
+
+@media (max-width: 768px) {
+    .image-slider-gallery{
+        height: auto;
+    }
+
+  .image-slider-gallery > img {
+    aspect-ratio: 1.5;
+    object-fit: cover;
+  }
+}
+
+
+@for $i from 2 to ($n + 1) {
+  .image-slider-gallery > img:nth-child(#{$i}) {animation-delay: calc(#{(1 - $i)/$n}*var(--d))}
+}
+@keyframes r {
+  #{100*($n - 1)/$n}% {transform: translate((1 - $n)*100%)}
+  #{100*($n - 1)/$n + .01}% {transform: translate(100%)}
+}
