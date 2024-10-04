@@ -17,7 +17,7 @@ const CustomCard = ({
         <p className="flex flex-col">
           <p className="font-medium">By the numbers:</p>
           <ul className="list-disc pl-6">
-            <li>450 plus members</li>
+            <li>470 plus members</li>
             <li>2 day hackathon organized</li>
             <li>10 plus workshops/meetups</li>
           </ul>

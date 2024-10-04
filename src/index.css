@@ -410,6 +410,12 @@ body {
 }
 
 
+/* Countdown clock fixes */
+[data-testid="fcc-container"]{
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+}
+
 
 /* Should always be below all vanilla css to have higher precedence - Favour */
 @tailwind utilities;

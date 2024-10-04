@@ -81,12 +81,42 @@ export default [
     },
     {
         "id": 9,
-        "name": "New Event",
+        "name": "Arbitrum University 2.0 event at FUPRE",
         "type": "meetup",
-        "startDate": "2024-11-01",
-        "endDate": "2024-11-02",
-        "photosUrl": "https://photos.app.goo.gl/8eERVfMBZcowb7zFA",
-        "registerLink": "https://medium.com/web3-warri/hosting-200-plus-people-at-the-delta-state-university-nigeria-arbitrum-event-b8bd327fbf17",
-        "blogLink": "https://medium.com/web3-warri/hosting-200-plus-people-at-the-delta-state-university-nigeria-arbitrum-event-b8bd327fbf17"
-    }
+        "startDate": "2024-08-17",
+        "endDate": "2024-08-17",
+        "photosUrl": "https://x.com/web3_warri/status/1824855075514130517",
+        "registerLink": "https://www.meetup.com/web3-warri/events/302419992/",
+        "blogLink": ""
+    },
+    {
+        "id": 10,
+        "name": "Arbitrum University 2.0 event at PTI",
+        "type": "meetup",
+        "startDate": "2024-08-23",
+        "endDate": "2024-08-23",
+        "photosUrl": "https://x.com/web3_warri/status/1826960087774032225",
+        "registerLink": "https://www.meetup.com/web3-warri/events/302472144/",
+        "blogLink": ""
+    },
+    {
+        "id": 11,
+        "name": "Arbitrum University 2.0 event at DELSU",
+        "type": "meetup",
+        "startDate": "2024-09-13",
+        "endDate": "2024-09-13",
+        "photosUrl": "https://x.com/web3_warri/status/1834691752957026334",
+        "registerLink": "https://www.meetup.com/web3-warri/events/303293095/",
+        "blogLink": ""
+    },
+    {
+        "id": 12,
+        "name": "Arbitrum Hacker House",
+        "type": "hackathon",
+        "startDate": "2024-10-08",
+        "endDate": "2024-10-12",
+        "photosUrl": "",
+        "registerLink": "https://x.com/web3_warri/status/1834691752957026334",
+        "blogLink": "https://medium.com/web3-warri/announcing-the-web3-warri-arbitrum-hacker-house-a127f8f48509"
+    },
 ]

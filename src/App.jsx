@@ -6,6 +6,7 @@ import logoWhiteSvg from "./assets/img/logo-white.svg";
 import heroBg from "./assets/img/hero-bg.gif";
 import contactImg from "./assets/img/contact-img.png";
 import mouseAnimation from "./assets/img/mouse-animation.gif";
+import partyPopperEmoji from "./assets/img/party-popper.png";
 // import web3Coin from "./assets/img/web3-coin.png";
 // import DelsuArbEvent1 from "./assets/img/web3-warri-DELSU.webp";
 import FupreArbEvent1 from "./assets/img/web3Warri-arbitrum-fupre-316.webp";
@@ -24,6 +25,9 @@ import "./App.css";
 import "./assets/css/card.scss";
 import { ImpactSection } from "./components/ImpactSection";
 import { EventSection } from "./components/EventSection";
+import FlipClockCountdown from "@leenguyen/react-flip-clock-countdown";
+import "@leenguyen/react-flip-clock-countdown/dist/index.css";
+
 // gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger, Draggable);
 
@@ -308,6 +312,31 @@ function App() {
           />
         </section>
 
+        {new Date() <= new Date("2024-10-12T23:59:59") && (
+          <section className="relative py-8">
+            <div className="container mx-auto px-6">
+              <div className="flex flex-col items-center w-full">
+                <h1 className="text-3xl font-semibold mb-6 text-center">
+                  Web3 Warri - Arbitrum Hacker House
+                </h1>
+
+                <FlipClockCountdown to={new Date("2024-10-08").getTime()}>
+                  <div className="flex items-center justify-center gap-4">
+                    <img
+                      className="h-[8.75rem] w-[8.75rem]"
+                      src={partyPopperEmoji}
+                      alt=""
+                    />
+                    <p className="text-xl font-semibold">
+                      Hurray, The hacker house is currently on!
+                    </p>
+                  </div>
+                </FlipClockCountdown>
+              </div>
+            </div>
+          </section>
+        )}
+
         <section className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
@@ -343,7 +372,6 @@ function App() {
             </div>
           </div>
         </section>
-
         <EventSection />
         <section id="aboutUs-section" className="relative py-8">
           <div className="container mx-auto px-6">
@@ -392,7 +420,6 @@ function App() {
           </div>
         </section>
         <ImpactSection />
-
         {/* <section id="weValue-section" className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center w-full">
@@ -422,7 +449,6 @@ function App() {
             </div>
           </div>
         </section> */}
-
         <section className="relative py-8">
           <div className="container mx-auto px-6">
             <div className="flex flex-col items-center text-center w-full">
@@ -457,7 +483,6 @@ function App() {
             </div>
           </div>
         </section>
-
         <section className="fullwidth-image py-8">
           <div className="fullwidth-image__overlay"></div>
           <div className="fullwidth-image__text min-w-full md:min-w-auto">
