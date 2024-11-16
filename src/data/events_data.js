@@ -115,8 +115,18 @@ export default [
         "type": "hackathon",
         "startDate": "2024-10-08",
         "endDate": "2024-10-12",
-        "photosUrl": "",
+        "photosUrl": "https://x.com/web3_warri/status/1844489513181360507",
         "registerLink": "https://x.com/web3_warri/status/1834691752957026334",
         "blogLink": "https://medium.com/web3-warri/announcing-the-web3-warri-arbitrum-hacker-house-a127f8f48509"
+    },
+    {
+        "id": 13,
+        "name": "Building Onchain with Base",
+        "type": "meetup",
+        "startDate": "2024-11-30",
+        "endDate": "2024-11-30",
+        "photosUrl": "",
+        "registerLink": "https://lu.ma/gbco120r",
+        "blogLink": "https://x.com/web3_warri/status/1857034928321393027"
     },
 ]
