@@ -40,7 +40,9 @@ const EventCard = ({ data }) => {
   return (
     <li>
       <div
-        className={`flex gap-3 group relative flex-col justify-between bg-white text-black text-left rounded-lg min-h-[300px] min-w-[250px] md:min-w-[350px] md:-ml-[50px] border-2 border-black `}
+        className={`flex gap-3 group relative flex-col justify-between  text-black text-left rounded-lg min-h-[300px] min-w-[250px] md:min-w-[350px] md:-ml-[50px] border-2 border-black 
+          ${!isPastEvent ? "card-bg-gradient" : " bg-white"}
+          `}
       >
         <div className="p-4">
           <div
