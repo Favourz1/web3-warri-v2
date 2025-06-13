@@ -145,4 +145,14 @@ export default [
     registerLink: "https://lu.ma/sx9nucjo",
     blogLink: "https://x.com/web3_warri/status/1923262371516072038",
   },
+  {
+    id: 15,
+    name: "Arbitrum University 3.0 event at DELSU",
+    type: "meetup",
+    startDate: "2025-06-18",
+    endDate: "2025-06-18",
+    photosUrl: "",
+    registerLink: "https://lu.ma/3mw149oa",
+    blogLink: "https://x.com/web3_warri/status/1933147574812266748",
+  },
 ];

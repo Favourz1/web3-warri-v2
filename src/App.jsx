@@ -313,15 +313,15 @@ function App() {
           />
         </section>
 
-        {new Date() <= new Date("2025-05-23T23:59:59") && (
+        {new Date() <= new Date("2025-06-18T23:59:59") && (
           <section className="relative py-8">
             <div className="container mx-auto px-6">
               <div className="flex flex-col items-center w-full">
                 <h1 className="text-3xl font-semibold mb-6 text-center">
-                  Arbitrum University 3.0 event at UNIBEN Countdown
+                  Arbitrum University 3.0 event at DELSU Countdown
                 </h1>
 
-                <FlipClockCountdown to={new Date("2025-05-23").getTime()}>
+                <FlipClockCountdown to={new Date("2025-06-18").getTime()}>
                   <div className="flex items-center justify-center gap-4">
                     <img
                       className="h-[8.75rem] w-[8.75rem]"
@@ -329,7 +329,7 @@ function App() {
                       alt=""
                     />
                     <p className="text-xl font-semibold">
-                      Hurray, The Arbitrum University 3.0 event at UNIBEN is
+                      Hurray, The Arbitrum University 3.0 event at DELSU is
                       currently on!
                     </p>
                   </div>
