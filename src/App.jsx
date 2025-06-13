@@ -7,6 +7,7 @@ import heroBg from "./assets/img/hero-bg.gif";
 import contactImg from "./assets/img/contact-img.png";
 import mouseAnimation from "./assets/img/mouse-animation.gif";
 import partyPopperEmoji from "./assets/img/party-popper.png";
+import eventsData from "./data/events_data";
 // import web3Coin from "./assets/img/web3-coin.png";
 // import DelsuArbEvent1 from "./assets/img/web3-warri-DELSU.webp";
 import FupreArbEvent1 from "./assets/img/web3Warri-arbitrum-fupre-316.webp";
@@ -121,6 +122,9 @@ function App() {
       },
     });
   }, []);
+
+  // Get the last event from events data
+  const lastEvent = eventsData[eventsData.length - 1];
 
   return (
     <>
@@ -313,15 +317,17 @@ function App() {
           />
         </section>
 
-        {new Date() <= new Date("2025-06-18T23:59:59") && (
+        {new Date() <= new Date(`${lastEvent.endDate}T23:59:59`) && (
           <section className="relative py-8">
             <div className="container mx-auto px-6">
               <div className="flex flex-col items-center w-full">
                 <h1 className="text-3xl font-semibold mb-6 text-center">
-                  Arbitrum University 3.0 event at DELSU Countdown
+                  {lastEvent.name} Countdown
                 </h1>
 
-                <FlipClockCountdown to={new Date("2025-06-18").getTime()}>
+                <FlipClockCountdown
+                  to={new Date(lastEvent.startDate).getTime()}
+                >
                   <div className="flex items-center justify-center gap-4">
                     <img
                       className="h-[8.75rem] w-[8.75rem]"
@@ -329,8 +335,7 @@ function App() {
                       alt=""
                     />
                     <p className="text-xl font-semibold">
-                      Hurray, The Arbitrum University 3.0 event at DELSU is
-                      currently on!
+                      Hurray, {lastEvent.name} is currently on!
                     </p>
                   </div>
                 </FlipClockCountdown>
