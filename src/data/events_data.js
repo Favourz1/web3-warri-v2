@@ -155,4 +155,14 @@ export default [
     registerLink: "https://lu.ma/3mw149oa",
     blogLink: "https://x.com/web3_warri/status/1933147574812266748",
   },
+  {
+    id: 16,
+    name: "Arbitrum University 3.0 event at UNIPORT",
+    type: "meetup",
+    startDate: "2025-07-16",
+    endDate: "2025-07-16",
+    photosUrl: "",
+    registerLink: "https://lu.ma/bubfs290",
+    blogLink: "",
+  },
 ];
