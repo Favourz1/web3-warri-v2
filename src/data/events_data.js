@@ -165,4 +165,14 @@ export default [
     registerLink: "https://lu.ma/bubfs290",
     blogLink: "",
   },
+  {
+    id: 17,
+    name: "Arbitrum University 3.0 event at PTI",
+    type: "meetup",
+    startDate: "2025-08-08",
+    endDate: "2025-08-08",
+    photosUrl: "",
+    registerLink: "https://lu.ma/ktwq68k0",
+    blogLink: "",
+  },
 ];
