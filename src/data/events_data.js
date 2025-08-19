@@ -175,4 +175,14 @@ export default [
     registerLink: "https://lu.ma/ktwq68k0",
     blogLink: "",
   },
+  {
+    id: 18,
+    name: "Arbitrum University 3.0 event at FUPRE",
+    type: "meetup",
+    startDate: "2025-08-30",
+    endDate: "2025-08-30",
+    photosUrl: "",
+    registerLink: "https://lu.ma/9s44l61j",
+    blogLink: "",
+  },
 ];
