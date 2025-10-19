@@ -185,4 +185,14 @@ export default [
     registerLink: "https://lu.ma/9s44l61j",
     blogLink: "",
   },
+  {
+    id: 19,
+    name: "Web3 Warri X Arbitrum Hacker House 2.0",
+    type: "hackathon",
+    startDate: "2025-10-27",
+    endDate: "2025-10-31",
+    photosUrl: "",
+    registerLink: "",
+    blogLink: "",
+  },
 ];
