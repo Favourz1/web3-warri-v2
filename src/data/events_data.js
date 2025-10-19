@@ -192,7 +192,7 @@ export default [
     startDate: "2025-10-27",
     endDate: "2025-10-31",
     photosUrl: "",
-    registerLink: "",
+    registerLink: "https://luma.com/86z9mkq4",
     blogLink: "",
   },
 ];
